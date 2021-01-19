@@ -1,0 +1,29 @@
+﻿{% extends "app/layout.html" %}
+
+{% block content %}
+
+<div class="jumbotron" style="background-image: url(../../static/src/logo.png); background-attachment: fixed; background-size: cover;">
+    <h1>Lung Cancer Detection</h1>
+    <p class="lead">A cancer that begins in the lungs and most often occurs in people who smoke.</p>
+    <p><a href="https://www.cancer.org/cancer.html" class="btn btn-primary btn-large">Read more &raquo;</a></p>
+</div>
+
+<div class="row">
+    <div class="col-md-6">
+        <h2>Keep your lung health</h2>
+        <p>
+            You can check your lung' status yourself based on your lung CT image.<br>
+            Please upload your lung CT image.<br>
+        </p>
+        <form  action="{% url 'home' %}">
+            <button class="btn btn-primary" type="submit">New Detection</button>
+        </form>
+
+    </div>
+    <div class="col-md-6">
+        <h2>Result</h2>
+        <p> {{result}}</p>
+    </div>
+</div>
+
+{% endblock %}
